@@ -7,11 +7,11 @@ export default class Userpoints extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.bigInteger('user_id').unsigned()
-      table.integer('english').notNullable().defaultTo(0)
-      table.integer('spanish').notNullable().defaultTo(0)
-      table.integer('french').notNullable().defaultTo(0)
-      table.integer('Italian').notNullable().defaultTo(0)
-      table.integer('russian').notNullable().defaultTo(0)
+      table.integer('ENG').notNullable().defaultTo(0)
+      table.integer('FRAN').notNullable().defaultTo(0)
+      table.integer('ESP').notNullable().defaultTo(0)
+      table.integer('ITA').notNullable().defaultTo(0)
+      table.integer('RUSS').notNullable().defaultTo(0)
       table.timestamps(true, true)
     })
   }

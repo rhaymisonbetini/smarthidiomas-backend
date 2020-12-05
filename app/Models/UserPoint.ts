@@ -2,6 +2,9 @@ import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class UserPoint extends BaseModel {
+
+  public static table = 'userpoints'
+
   @column({ isPrimary: true })
   public id: number
 
@@ -9,19 +12,19 @@ export default class UserPoint extends BaseModel {
   public  user_id:number;
 
   @column()
-  public  english:number;
+  public  ENG:number;
 
   @column()
-  public  spanish:number;
+  public  ESP:number;
 
   @column()
-  public  french:number;
+  public  FRAN:number;
 
   @column()
-  public  Italian:number;
+  public  ITA:number;
 
   @column()
-  public  russian:number;
+  public  RUSS:number;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
