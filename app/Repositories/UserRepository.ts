@@ -13,6 +13,19 @@ export default class UserRepository {
             .where('id', id);
     }
 
+    async getByEmail(email: string) {
+        return await Database.from('users')
+            .select('*')
+            .where('email', email)
+    }
+
+    async updateUserToken(email: string, token: string) {
+
+        let query = `UPDATE users SET token = ? WHERE email = ?`;
+        await Database.rawQuery(query, [token, email]);
+        return;
+    }
+
     async getUserPoints(user: any) {
         return await Database.query()
             .select('*')

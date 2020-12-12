@@ -7,11 +7,12 @@ export default class Users extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('name').notNullable()
+      table.string('email').notNullable().unique()
       table.string('password').notNullable()
-      table.string('email').notNullable()
       table.string('avatar').notNullable()
       table.integer('total_score').notNullable()
       table.integer('level').notNullable()
+      table.string('token',255).nullable()
       table.timestamps(true, true)
     })
   }
