@@ -59,4 +59,10 @@ export default class UserRepository {
         let updated = await Database.rawQuery(query, [points, user])
         return updated
     }
+
+    async getRanking() {
+        let query = 'SELECT * FROM users ORDER BY total_score desc';
+        let raking = await Database.rawQuery(query);
+        return raking[0];
+    }
 }

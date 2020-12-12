@@ -17,7 +17,9 @@ export default class AuthController {
 
             const { email, password } = request.all();
 
+
             let user: any = await this.userRepository.getByEmail(email)
+
 
             if (user && user.length > 0) {
                 let RegisteredPassword = user[0].password;
@@ -25,8 +27,21 @@ export default class AuthController {
 
                 if (verify) {
                     let token = await this.criptoService.generatedToken(user.email, user.nome);
-                    return response.status(200).send({ user, token })
+
+                    let studant = {
+                        id: user[0].id,
+                        nome: user[0].name,
+                        email: user[0].email,
+                        avatar: user[0].avatar,
+                        level: user[0].level,
+                        total_score: user[0].total_score,
+                        token: token
+                    }
+
+                    return response.status(200).send(studant);
+
                 } else {
+
                     return response.status(401).send('UNAUTHORIZED')
                 }
 

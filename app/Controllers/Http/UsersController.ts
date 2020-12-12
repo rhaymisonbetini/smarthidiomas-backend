@@ -73,4 +73,14 @@ export default class UsersController {
         }
     }
 
+    async raking({ response }: HttpContextContract) {
+        try {
+            let raking = await this.userRepository.getRanking();
+            return response.status(200).send(raking);
+        } catch (e) {
+            console.log(e);
+            return response.status(500).send(e)
+        }
+    }
+
 }
