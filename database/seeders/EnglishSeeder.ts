@@ -7,7 +7,7 @@ export default class EnglishSeederSeeder extends BaseSeeder {
     await Question.createMany([
       {
         language: 'ENG',
-        question: 'Hello, how are you?',
+        question: 'Hello , how are you ?',
         score_value: 10
       },
       {
@@ -32,7 +32,7 @@ export default class EnglishSeederSeeder extends BaseSeeder {
       },
       {
         language: 'ENG',
-        question: 'Good morning, have you had your breakfast?',
+        question: 'Good morning , have you had your breakfast ?',
         score_value: 10
       },
       {
@@ -42,7 +42,7 @@ export default class EnglishSeederSeeder extends BaseSeeder {
       },
       {
         language: 'ENG',
-        question: 'I love my family, my dad and mom are very special',
+        question: 'I love my family , my dad and mom are very special',
         score_value: 30
       },
     ])
